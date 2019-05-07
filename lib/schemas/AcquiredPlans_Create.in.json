@@ -1,0 +1,85 @@
+{
+    "type": "object",
+    "properties": {
+        "subscriptionId": {
+            "required": true,
+            "type": "string"
+        },
+        "targetSubscriptionId": {
+            "required": true,
+            "type": "string"
+        },
+        "planAcquisitionId": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "Represents the acquisition of an add-on plan for a subscription.",
+            "properties": {
+                "acquisitionId": {
+                    "description": "Acquisition identifier.",
+                    "type": "string"
+                },
+                "acquisitionTime": {
+                    "description": "Acquisition time.",
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "externalReferenceId": {
+                    "description": "External reference identifier.",
+                    "type": "string"
+                },
+                "id": {
+                    "description": "Identifier in the tenant subscription context.",
+                    "type": "string"
+                },
+                "planId": {
+                    "description": "Plan identifier in the tenant subscription context.",
+                    "type": "string"
+                },
+                "provisioningState": {
+                    "description": "State of the provisioning.",
+                    "enum": [
+                        "NotSpecified",
+                        "Accepted",
+                        "Failed",
+                        "Succeeded"
+                    ],
+                    "type": "string",
+                    "x-ms-enum": {
+                        "modelAsString": true,
+                        "name": "ProvisioningState",
+                        "values": [
+                            {
+                                "description": "The provisioning state is not specified.",
+                                "name": "NotSpecified",
+                                "value": "NotSpecified"
+                            },
+                            {
+                                "description": "The provisioning state is accepted, and indicates provisioning is ongoing.",
+                                "name": "Accepted",
+                                "value": "Accepted"
+                            },
+                            {
+                                "description": "The provisioning state is failed, and indicates the data is potentially out-of-sync with third parties.",
+                                "name": "Failed",
+                                "value": "Failed"
+                            },
+                            {
+                                "description": "The provisioning state is succeeded, and indicates the data is in-sync with third-parties.",
+                                "name": "Succeeded",
+                                "value": "Succeeded"
+                            }
+                        ]
+                    }
+                }
+            },
+            "type": "object"
+        },
+        "api_version": {
+            "required": true,
+            "type": "string",
+            "default": "2015-11-01"
+        }
+    }
+}
